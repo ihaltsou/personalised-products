@@ -80,7 +80,7 @@ abstract class AbstractOrdersCommand extends Command
         $order = $this->_orderFactory->create();
         $ordersCollection = $order->getCollection()
             ->addFieldToSelect(['entity_id', 'customer_id'])
-            ->addFieldToFilter('state', ['eq' => 'complete'])
+            ->addFieldToFilter('state', ['eq' => 'new'])
             ->addFieldToFilter('customer_id', array('neq' => 'NULL' ));
 
         return $ordersCollection->getData();
