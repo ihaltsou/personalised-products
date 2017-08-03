@@ -50,7 +50,6 @@ class ProductView extends Action {
         }
 
         $pageViewResult = $this->_productView->processViews($productId);
-
         if (!$pageViewResult) {
             return $result->setData(['error' => true, 'message' => 'There was an error processing the product view.']);
         }
